@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdPoint: {fileID: 6519377681227887987}
+  anim: {fileID: 0}
 --- !u!1 &2443221954070153636
 GameObject:
   m_ObjectHideFlags: 0

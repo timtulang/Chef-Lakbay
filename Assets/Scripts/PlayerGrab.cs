@@ -6,20 +6,40 @@ public class PlayerGrab : MonoBehaviour
 {
     public Transform holdPoint; // The position where the player holds the item
     private GameObject currentItem; // The item the player is currently holding
+    [SerializeField] private Animator anim;
+
+    private string INTERACT_ANIMATION = "actionBtnPressed";
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) // Replace with your desired key for grabbing
+        if (Input.GetKeyDown(KeyCode.E)) //For testing purposes only
         {
-            if (currentItem != null)
-            {
-                DropItem();
-            }
-            else
-            {
-                TryGrabItem();
-            }
+            ActionGrab();
         }
+    }
+    public void ActionGrab()
+    {
+        StartCoroutine(ActionGrabDelay());
+    }
+    IEnumerator ActionGrabDelay()
+    {
+        anim.SetBool(INTERACT_ANIMATION, true);
+        if (currentItem != null)
+        {
+            DropItem();
+        }
+        else
+        {
+            TryGrabItem();
+        }
+        yield return new WaitForSeconds(0.1f);
+        anim.SetBool(INTERACT_ANIMATION, false);
     }
 
     void TryGrabItem()
