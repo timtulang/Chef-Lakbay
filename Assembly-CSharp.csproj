@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\joystickCtrl.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\JoystickEditor.cs" />
+    <Compile Include="Assets\Scripts\PlayerGrab.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
