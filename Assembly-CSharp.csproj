@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\JoystickEditor.cs" />
     <Compile Include="Assets\Scripts\ActionButtonController.cs" />
     <Compile Include="Assets\Scripts\PlayerGrab.cs" />
+    <Compile Include="Assets\Scripts\TileItemMapping.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
