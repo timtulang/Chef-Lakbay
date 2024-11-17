@@ -1,20 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlayerGrab : MonoBehaviour
 {
     public Transform holdPoint; // The position where the player holds the item
     private GameObject currentItem; // The item the player is currently holding
+    [SerializeField] private Tilemap map; // The
     [SerializeField] private Animator anim;
+    private Vector3Int cellPosition;
+    private TileBase tile;
+    private bool itemDocked = false;
 
     private string INTERACT_ANIMATION = "actionBtnPressed";
-
-    void Start()
-    {
-        anim = GetComponent<Animator>();
-    }
-
 
     void Update()
     {
@@ -32,6 +31,19 @@ public class PlayerGrab : MonoBehaviour
         anim.SetBool(INTERACT_ANIMATION, true);
         if (currentItem != null)
         {
+            if (StationChecker())
+            {
+                Vector3 cellPos = map.CellToWorld(cellPosition);
+
+                // Set rotation from the tile in the Tilemap
+                Matrix4x4 tileMatrix = map.GetTransformMatrix(cellPosition);
+                currentItem.transform.rotation = Quaternion.LookRotation(Vector3.forward, tileMatrix.GetColumn(1));
+                currentItem.transform.position = cellPos + map.tileAnchor;
+
+
+                currentItem.GetComponent<CircleCollider2D>().radius *= 1.5f;
+                itemDocked = true;
+            }
             DropItem();
         }
         else
@@ -65,6 +77,8 @@ public class PlayerGrab : MonoBehaviour
     public void GrabItem(GameObject item)
     {
         currentItem = item;
+        if (itemDocked)
+            currentItem.GetComponent<CircleCollider2D>().radius /= 1.5f;
 
         // Snap the item to the hold point
         currentItem.transform.position = holdPoint.position;
@@ -82,6 +96,8 @@ public class PlayerGrab : MonoBehaviour
             rb.isKinematic = true;     // Disable physics
             rb.simulated = false;
         }
+
+        itemDocked = false;
     }
 
     void DropItem()
@@ -97,10 +113,23 @@ public class PlayerGrab : MonoBehaviour
             rb.simulated = true;    // Resume Rigidbody2D simulation
         }
 
-        // Change the item's layer back to Default or Grabbable
-        //currentItem.layer = LayerMask.NameToLayer("Item");
-
         currentItem = null; // Clear reference
+    }
+    bool StationChecker()
+    {
+        cellPosition = map.WorldToCell(holdPoint.transform.position); // Get the cell position
+        tile = map.GetTile(cellPosition); // Get the tile at that position
+        Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
+
+        if (tile != null && rb != null)
+        {
+            if (tile.name == "Stove" && (currentItem.name == "Kawali" || currentItem.name == "Kaldero"))
+            {
+                Debug.Log("Docked");
+                return true;
+            }
+        }
+        return false;
     }
     void OnDrawGizmos()
     {
