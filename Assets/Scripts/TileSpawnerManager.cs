@@ -12,9 +12,6 @@ public class TileSpawnerManager : MonoBehaviour
     [SerializeField]
     private Transform spawnPoint; // Where the item will spawn
 
-    [SerializeField]
-    private PlayerGrab pg;
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) // Example key to interact with tiles
@@ -35,6 +32,10 @@ public class TileSpawnerManager : MonoBehaviour
             Debug.Log("No tile exists at this position!");
             return;
         }
+        else
+        {
+            Debug.Log(tile.name);
+        }
 
         if (tile != null)
         {
@@ -52,4 +53,5 @@ public class TileSpawnerManager : MonoBehaviour
 
     }
 }
+
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class SpawnButtonManager : MonoBehaviour
+public class SpawnButtonHandler : MonoBehaviour
 {
     // Start is called before the first frame update
     public TileSpawnerManager map;

@@ -64,7 +64,6 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.51f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\SpawnButtonManager.cs" />
     <Compile Include="Assets\Scripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\joystickCtrl.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystick.cs" />
@@ -73,6 +72,7 @@
     <Compile Include="Assets\Scripts\ActionButtonController.cs" />
     <Compile Include="Assets\Scripts\PlayerGrab.cs" />
     <Compile Include="Assets\Scripts\TileItemMapping.cs" />
+    <Compile Include="Assets\Scripts\SpawnButtonHandler.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystickEditor.cs" />
   </ItemGroup>
   <ItemGroup>
