@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4460ee7d3d646244b9938ac44adae54b, type: 3}
+  m_Name: Pork
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: fe1cf90f3923c9b469f3332e9e3c0b9b, type: 2}
+  itemPrefab: {fileID: 7251286001167094771, guid: 06917c7e4b689074592324eb2ab5acaf, type: 3}

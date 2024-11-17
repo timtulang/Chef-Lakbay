@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4460ee7d3d646244b9938ac44adae54b, type: 3}
+  m_Name: Chili
+  m_EditorClassIdentifier: 
+  tile: {fileID: 11400000, guid: 11eef934772af614aae3c2789f5bb942, type: 2}
+  itemPrefab: {fileID: 6381647078017468893, guid: 497644fec2d738a4a8d5e384fe0f7862, type: 3}
