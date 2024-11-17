@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6666346324097142692}
   - component: {fileID: 8268087954563917994}
   - component: {fileID: 9169697432711665880}
+  - component: {fileID: 8219517710691578692}
   m_Layer: 7
   m_Name: Onion
   m_TagString: Item
@@ -148,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &8219517710691578692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5970754157134807719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: GingerCut

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3072046911056242626}
   - component: {fileID: 6513564797142029173}
   - component: {fileID: 677974744231623016}
+  - component: {fileID: -2355825942773500923}
   m_Layer: 7
   m_Name: PorkCooked
   m_TagString: Item
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.45
+--- !u!114 &-2355825942773500923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3036173864482801136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: PorkOver

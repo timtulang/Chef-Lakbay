@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 16674731725943806}
   - component: {fileID: 7598754660802195493}
   - component: {fileID: 8599513079820357070}
+  - component: {fileID: 7719969838058044739}
   m_Layer: 7
   m_Name: ginger
   m_TagString: Item
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: -0.1, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
+--- !u!114 &7719969838058044739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6197020951628763058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Ginger

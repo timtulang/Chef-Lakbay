@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 185428691535105172}
   - component: {fileID: 4801478226882541784}
   - component: {fileID: 1886470569463992321}
+  - component: {fileID: 1753572994625347444}
   m_Layer: 7
   m_Name: ChickenRaw
   m_TagString: Item
@@ -148,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1753572994625347444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5801241151817698802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: ChickenRaw

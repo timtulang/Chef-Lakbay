@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8731004394438346277}
   - component: {fileID: 6955612622191178618}
   - component: {fileID: 8933365923235704781}
+  - component: {fileID: -3830804317122432872}
   m_Layer: 7
   m_Name: Chili
   m_TagString: Item
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &-3830804317122432872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6381647078017468893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Chili

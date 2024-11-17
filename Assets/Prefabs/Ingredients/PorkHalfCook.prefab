@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 542295488073576371}
   - component: {fileID: 8627891557918195860}
   - component: {fileID: 9046975069644154449}
+  - component: {fileID: 8366187540272946632}
   m_Layer: 7
   m_Name: PorkHalfCook
   m_TagString: Item
@@ -148,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &8366187540272946632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6842774226320887129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Pork

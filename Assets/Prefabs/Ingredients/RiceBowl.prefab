@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6930583361475779239}
   - component: {fileID: 3542533586116713146}
   - component: {fileID: 1646930355023448112}
+  - component: {fileID: 3147140674015388059}
   m_Layer: 7
   m_Name: RiceBowl
   m_TagString: Item
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.4
+--- !u!114 &3147140674015388059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7208140922224991711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Rice

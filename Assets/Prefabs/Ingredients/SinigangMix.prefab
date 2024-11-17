@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5900218384810404472}
   - component: {fileID: 4649945282023685361}
   - component: {fileID: 2878611070230189736}
+  - component: {fileID: 2698502202631827360}
   m_Layer: 7
   m_Name: SinigangMix
   m_TagString: Item
@@ -158,3 +159,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &2698502202631827360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4639372609695709408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Tamarind

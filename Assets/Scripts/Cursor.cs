@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    private Vector3 mouseWorldPosition;
+    private void Awake()
     {
-        
+        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0;
+        transform.position = mouseWorldPosition;
+    }
+    private void Update()
+    {
+        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0;
+        transform.position = mouseWorldPosition;
+
     }
 }

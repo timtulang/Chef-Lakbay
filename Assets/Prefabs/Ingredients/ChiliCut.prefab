@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5138300688822811113}
   - component: {fileID: 2044266514739195278}
   - component: {fileID: 6770473260586943785}
+  - component: {fileID: 1475095001096817057}
   m_Layer: 7
   m_Name: ChiliCut
   m_TagString: Item
@@ -148,3 +149,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1475095001096817057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3618363619709564486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: ChiliCut
