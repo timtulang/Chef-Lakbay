@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -9,6 +11,8 @@ public class PlayerGrab : MonoBehaviour
     private GameObject currentItem; // The item the player is currently holding
     [SerializeField] private Tilemap map; // The
     [SerializeField] private Animator anim;
+    [SerializeField]
+    private List<GameObject> choppable;
     private Vector3Int cellPosition;
     private TileBase tile;
     private bool itemDocked = false;
@@ -70,12 +74,12 @@ public class PlayerGrab : MonoBehaviour
                 GrabItem(item.gameObject);
                 return; // Stop after grabbing the first valid item
             }
-            Debug.Log("Detected Item: " + item.name);
         }
     }
 
     public void GrabItem(GameObject item)
     {
+        Debug.Log(holdPoint.transform.position);
         currentItem = item;
         if (itemDocked)
             currentItem.GetComponent<CircleCollider2D>().radius /= 1.5f;
@@ -119,13 +123,27 @@ public class PlayerGrab : MonoBehaviour
     {
         cellPosition = map.WorldToCell(holdPoint.transform.position); // Get the cell position
         tile = map.GetTile(cellPosition); // Get the tile at that position
-        Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
 
-        if (tile != null && rb != null)
+        if (tile != null)
         {
-            if (tile.name == "Stove" && (currentItem.name == "Kawali" || currentItem.name == "Kaldero"))
+            if (tile.name == "Stove" && currentItem.name == "Kawali")
             {
-                Debug.Log("Docked");
+                return true;
+            }
+            if (tile.name == "Plate" && ListChecker())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+    bool ListChecker()
+    {
+        foreach (GameObject obj in choppable)
+        {
+            if (obj.name == currentItem.name)
+            {
                 return true;
             }
         }

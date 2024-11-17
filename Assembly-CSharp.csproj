@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\CraftingManager.cs" />
     <Compile Include="Assets\Scripts\PlayerGrab.cs" />
     <Compile Include="Assets\Scripts\TileItemMapping.cs" />
+    <Compile Include="Assets\Scripts\FoodProcessManager.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystickEditor.cs" />
     <Compile Include="Assets\Scripts\PlayerTeleport.cs" />
   </ItemGroup>

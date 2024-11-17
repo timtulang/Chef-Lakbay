@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4043023928354440892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3613889399121691733}
+  - component: {fileID: 102009425973789439}
+  m_Layer: 0
+  m_Name: CraftingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3613889399121691733
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043023928354440892}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.67618096, y: -2.9480948, z: 0.012010936}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &102009425973789439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4043023928354440892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3ca8a3a8fbad9c47b73d99823d9920b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  customCursor: {fileID: 0}
+  craftingSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  itemList:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  recipes:
+  - PorkTamarindPotatoCutChiliCutRice
+  - ChickenGingerCutSayoteCutPatisRice
+  - PorkCoconutMilkChiliCutGarlicCutRice
+  - PorkGarlicChiliCutRice
+  - ChickenCoconutMilkChiliCutGarlicCutRice
+  - ChickenSauceRice
+  recipeResults:
+  - {fileID: 801249481772365162, guid: 8db844028ba1c184bb510189523f19df, type: 3}
+  - {fileID: 7581919184208195828, guid: 2e76f2d600ce5094eb396e19b3a9fafd, type: 3}
+  - {fileID: 8846136401400326523, guid: 082a0cf59394fae48bc614643c4076b1, type: 3}
+  - {fileID: 7879926007949529327, guid: 685e4aacf34f9e1499620791c7da3350, type: 3}
+  - {fileID: 7859553468667491570, guid: b2758d9ba49a1ea40a8b4983362c644f, type: 3}
+  - {fileID: 7879926007949529327, guid: 685e4aacf34f9e1499620791c7da3350, type: 3}
+  resultSlot: {fileID: 0}
