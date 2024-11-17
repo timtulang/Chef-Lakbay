@@ -62,7 +62,7 @@ public class PlayerGrab : MonoBehaviour
         }
     }
 
-    void GrabItem(GameObject item)
+    public void GrabItem(GameObject item)
     {
         currentItem = item;
 

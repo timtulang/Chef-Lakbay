@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
-public class TileItemMapping : MonoBehaviour
+[CreateAssetMenu(fileName = "NewTileItemMapping", menuName = "ScriptableObjects/TileItemMapping")]
+public class TileItemMapping : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public TileBase tile;       // Reference to the tile
+    public GameObject itemPrefab; // Prefab to spawn
 }
+
