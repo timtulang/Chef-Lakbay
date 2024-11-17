@@ -65,6 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SpawnButtonManager.cs" />
+    <Compile Include="Assets\Scripts\Slots.cs" />
+    <Compile Include="Assets\Scripts\Cursor.cs" />
+    <Compile Include="Assets\Scripts\CraftingItems.cs" />
     <Compile Include="Assets\Scripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\joystickCtrl.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystick.cs" />
