@@ -9,7 +9,7 @@ public class HoldPointManager : MonoBehaviour
     private PlayerGrab pg;
     [SerializeField]
     private FoodProcessManager manager;
-    private bool canCook;
+
     private bool isOnKawali; // Flag to track if the HoldPoint is on Kawali
 
     void OnTriggerStay2D(Collider2D other)
@@ -64,15 +64,14 @@ public class HoldPointManager : MonoBehaviour
                 }
 
                 pg.CurrentItem.GetComponent<CircleCollider2D>().isTrigger = true; // Disable collider interaction
-                pg.CurrentItem.GetComponent<CircleCollider2D>().radius *= 2;
+                pg.CurrentItem.GetComponent<CircleCollider2D>().radius /= 2f;
                 pg.CurrentItem = null;
             }
-            else if (kawali.transform.childCount > 0)
+            else
             {
-                canCook = false;
+                kawali.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
+                kawali.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().radius *= 2f;
                 pg.GrabItem(kawali.transform.GetChild(0).gameObject);
-                pg.CurrentItem.GetComponent<CircleCollider2D>().isTrigger = false; // Re-enable collider interaction
-                pg.CurrentItem.GetComponent<CircleCollider2D>().radius /= 2;
             }
         }
     }

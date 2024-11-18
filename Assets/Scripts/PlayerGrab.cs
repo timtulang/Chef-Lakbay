@@ -71,6 +71,11 @@ public class PlayerGrab : MonoBehaviour
     public void GrabItem(GameObject item)
     {
         currentItem = item;
+        if (currentItem.GetComponent<CircleCollider2D>() != null && currentItem.GetComponent<CircleCollider2D>().isTrigger == true)
+        {
+            currentItem.GetComponent<CircleCollider2D>().radius /= 2f;
+            currentItem.GetComponent<CircleCollider2D>().isTrigger = false;
+        }
 
         // Snap the item to the hold point
         currentItem.transform.position = holdPoint.position;
