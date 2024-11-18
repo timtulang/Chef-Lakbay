@@ -51,7 +51,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  optionsSlots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   itemList:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -71,3 +78,4 @@ MonoBehaviour:
   - {fileID: 7859553468667491570, guid: b2758d9ba49a1ea40a8b4983362c644f, type: 3}
   - {fileID: 7879926007949529327, guid: 685e4aacf34f9e1499620791c7da3350, type: 3}
   resultSlot: {fileID: 0}
+  canvas: {fileID: 0}

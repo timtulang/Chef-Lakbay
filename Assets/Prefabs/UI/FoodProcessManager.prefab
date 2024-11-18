@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8225273291404631777
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8808350558831410475}
+  - component: {fileID: 7383042475720758650}
+  m_Layer: 0
+  m_Name: FoodProcessManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8808350558831410475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225273291404631777}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7383042475720758650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8225273291404631777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14438cf1f368a1247841adf69040841c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  choppable:
+  - {fileID: 6381647078017468893, guid: 497644fec2d738a4a8d5e384fe0f7862, type: 3}
+  - {fileID: 650608626329319165, guid: a69e3407e2f660042b5f0089332e0e84, type: 3}
+  - {fileID: 6197020951628763058, guid: 6641042a68adacf48a24ef3e45781e43, type: 3}
+  - {fileID: 7709869276487292295, guid: fc84653e9298f2b4aacc2131fb17c462, type: 3}
+  - {fileID: 658498654063413948, guid: cdb7146b53c210349868bec4ebb2f2d5, type: 3}
+  craftable:
+  - {fileID: 7636996246406975053, guid: e82a3e294ffbcad4d8b676b95551f650, type: 3}
+  - {fileID: 77352961882532192, guid: 50a60b67f7cd8ec4990b8a006f3e9fd4, type: 3}
+  - {fileID: 5801241151817698802, guid: 567b1dbc371d427409b0b5fe8fea7f70, type: 3}
+  - {fileID: 6381647078017468893, guid: 497644fec2d738a4a8d5e384fe0f7862, type: 3}
+  - {fileID: 3618363619709564486, guid: bb6bf927e3742bf4bb0c1a61617d1805, type: 3}
+  - {fileID: 2946496773533963048, guid: abefd7b85b4c74446b2be7f20fb7a8bc, type: 3}
+  - {fileID: 650608626329319165, guid: a69e3407e2f660042b5f0089332e0e84, type: 3}
+  - {fileID: 4557408489873242305, guid: 564b10b16c65dcc4aa20aed1de3ff2f3, type: 3}
+  - {fileID: 6197020951628763058, guid: 6641042a68adacf48a24ef3e45781e43, type: 3}
+  - {fileID: 5970754157134807719, guid: 497a5b49cde01da43a598118f1b08d22, type: 3}
+  - {fileID: 7709869276487292295, guid: fc84653e9298f2b4aacc2131fb17c462, type: 3}
+  - {fileID: 3702202542759301161, guid: d5486f3f254871b449fc7b373a061bd1, type: 3}
+  - {fileID: 6842774226320887129, guid: b2149e8e04f1bc84bb5bffee36b9657c, type: 3}
+  - {fileID: 7251286001167094771, guid: 06917c7e4b689074592324eb2ab5acaf, type: 3}
+  - {fileID: 658498654063413948, guid: cdb7146b53c210349868bec4ebb2f2d5, type: 3}
+  - {fileID: 489220917144213780, guid: 0c0cf3209108d6244a50c9f96b826b08, type: 3}
+  - {fileID: 7208140922224991711, guid: 67763bf3fb2578b4db2513c7439eb070, type: 3}
+  - {fileID: 4639372609695709408, guid: 046290a526b80c84d9a2f29b47180c52, type: 3}
+  - {fileID: 5684500455295578181, guid: c79b241be185d2440811aa15ab2a101a, type: 3}
+  cookable: []
+  tilemap: {fileID: 0}
+  plate: {fileID: 11400000, guid: 353fcdffe524e8245b7c2155d909ba92, type: 2}
+  choppingBoard: {fileID: 11400000, guid: 76ba44e3d62b0f448acf2ba132c57f6a, type: 2}
+  stove: {fileID: 11400000, guid: e68e788dfe49d924a975dd8daf104f18, type: 2}
+  canvasPlate: {fileID: 0}
+  pg: {fileID: 0}
+  holdPoint: {fileID: 0}

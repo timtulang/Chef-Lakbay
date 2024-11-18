@@ -9,13 +9,15 @@ public class PlayerGrab : MonoBehaviour
 {
     public Transform holdPoint; // The position where the player holds the item
     private GameObject currentItem; // The item the player is currently holding
+    public GameObject CurrentItem
+    {
+        get { return currentItem; }
+        set { currentItem = value; }
+    }
     [SerializeField] private Tilemap map; // The
     [SerializeField] private Animator anim;
     [SerializeField]
-    private List<GameObject> choppable;
-    private Vector3Int cellPosition;
-    private TileBase tile;
-    private bool itemDocked = false;
+    private FoodProcessManager manager;
 
     private string INTERACT_ANIMATION = "actionBtnPressed";
 
@@ -35,19 +37,7 @@ public class PlayerGrab : MonoBehaviour
         anim.SetBool(INTERACT_ANIMATION, true);
         if (currentItem != null)
         {
-            if (StationChecker())
-            {
-                Vector3 cellPos = map.CellToWorld(cellPosition);
-
-                // Set rotation from the tile in the Tilemap
-                Matrix4x4 tileMatrix = map.GetTransformMatrix(cellPosition);
-                currentItem.transform.rotation = Quaternion.LookRotation(Vector3.forward, tileMatrix.GetColumn(1));
-                currentItem.transform.position = cellPos + map.tileAnchor;
-
-
-                currentItem.GetComponent<CircleCollider2D>().radius *= 1.5f;
-                itemDocked = true;
-            }
+            manager.StationChecker();
             DropItem();
         }
         else
@@ -81,7 +71,7 @@ public class PlayerGrab : MonoBehaviour
     {
         Debug.Log(holdPoint.transform.position);
         currentItem = item;
-        if (itemDocked)
+        if (manager.ItemDocked)
             currentItem.GetComponent<CircleCollider2D>().radius /= 1.5f;
 
         // Snap the item to the hold point
@@ -101,7 +91,7 @@ public class PlayerGrab : MonoBehaviour
             rb.simulated = false;
         }
 
-        itemDocked = false;
+        manager.ItemDocked = false;
     }
 
     void DropItem()
@@ -118,36 +108,6 @@ public class PlayerGrab : MonoBehaviour
         }
 
         currentItem = null; // Clear reference
-    }
-    bool StationChecker()
-    {
-        cellPosition = map.WorldToCell(holdPoint.transform.position); // Get the cell position
-        tile = map.GetTile(cellPosition); // Get the tile at that position
-        //Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
-
-        if (tile != null)
-        {
-            if (tile.name == "Stove" && currentItem.name == "Kawali")
-            {
-                return true;
-            }
-            if (tile.name == "Plate" && ListChecker())
-            {
-                return true;
-            }
-        }
-        return false;
-    }
-    bool ListChecker()
-    {
-        foreach (GameObject obj in choppable)
-        {
-            if (obj.name == currentItem.name)
-            {
-                return true;
-            }
-        }
-        return false;
     }
     void OnDrawGizmos()
     {

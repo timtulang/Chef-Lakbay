@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Microsoft.Unity.VisualStudio.Editor;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class CraftingManager : MonoBehaviour
 {
     private CraftingItems currentItem;
     public UnityEngine.UI.Image customCursor;
     public Slots[] craftingSlots;
+    public CraftingItems[] optionsSlots;
     public List<CraftingItems> itemList;
     public string[] recipes;
     public GameObject[] recipeResults;
     public Slots resultSlot;
+    public Canvas canvas;
+    private float lastClickTime = 0f;
+    private float doubleClickThreshold = 0.3f; // Maximum time (seconds) between clicks for a double-click
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -64,7 +70,7 @@ public class CraftingManager : MonoBehaviour
         Debug.Log(currentRecipeString);
         for (int i = 0; i < recipes.Length; i++)
         {
-            if (recipes[i] == currentRecipeString + "Rice")
+            if (recipes[i] == currentRecipeString)
             {
                 resultSlot.gameObject.SetActive(true);
                 resultSlot.GetComponent<UnityEngine.UI.Image>().sprite = recipeResults[i].GetComponent<SpriteRenderer>().sprite;
@@ -87,5 +93,9 @@ public class CraftingManager : MonoBehaviour
             customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
         }
+    }
+    public void CloseCraftingUI()
+    {
+        canvas.gameObject.SetActive(false);
     }
 }

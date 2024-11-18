@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\JoystickEditor.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
     <Compile Include="Assets\Scripts\TileSpawnerManager.cs" />
+    <Compile Include="Assets\Scripts\DoubleClickSlots.cs" />
     <Compile Include="Assets\Scripts\ActionButtonController.cs" />
     <Compile Include="Assets\Scripts\CraftingManager.cs" />
     <Compile Include="Assets\Scripts\PlayerGrab.cs" />

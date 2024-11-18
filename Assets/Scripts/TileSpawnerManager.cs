@@ -11,8 +11,6 @@ public class TileSpawnerManager : MonoBehaviour
     private List<TileItemMapping> tileMappings; // List of tile-to-item mappings
     [SerializeField]
     private Transform spawnPoint; // Where the item will spawn
-    public TileBase plate;
-    public Canvas canvas;
 
 
     void Update()
@@ -47,11 +45,6 @@ public class TileSpawnerManager : MonoBehaviour
                     Instantiate(mapping.itemPrefab, spawnPoint.position, Quaternion.identity);
                     return;
                 }
-            }
-            //TODO: FIX THIS. FIND PROPER IMPLEMENTATION OF ENABLING UI
-            if (tile == plate)
-            {
-                canvas.gameObject.SetActive(true);
             }
         }
 
