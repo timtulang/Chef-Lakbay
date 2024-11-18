@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\CraftingItems.cs" />
     <Compile Include="Assets\Scripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\joystickCtrl.cs" />
+    <Compile Include="Assets\Scripts\HoldPointManager.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystick.cs" />
     <Compile Include="Assets\Scripts\JoystickEditor.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />

@@ -7,12 +7,14 @@ public class SpawnButtonManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public TileSpawnerManager map;
+    public FoodProcessManager manager;
 
     public void OnActionButtonPressed()
     {
         if (map != null)
         {
             map.InteractWithTile();
+            manager.EnablePlate();
         }
     }
 }

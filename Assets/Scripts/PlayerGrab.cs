@@ -94,7 +94,7 @@ public class PlayerGrab : MonoBehaviour
         manager.ItemDocked = false;
     }
 
-    void DropItem()
+    public void DropItem()
     {
         // Unparent the item
         currentItem.transform.SetParent(null);

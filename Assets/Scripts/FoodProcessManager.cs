@@ -21,7 +21,6 @@ public class FoodProcessManager : MonoBehaviour
     private Canvas canvasPlate;
     [SerializeField]
     private PlayerGrab pg;
-
     private TileBase currentTile;
     private bool _itemDocked = false;
     public Transform holdPoint;
@@ -35,21 +34,20 @@ public class FoodProcessManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Debug.Log(holdPoint);
+            tileChecker();
             EnablePlate();
         }
     }
 
-    void EnablePlate()
+    public void EnablePlate()
     {
-        if (tileChecker() == plate)
+        if (currentTile == plate)
         {
             canvasPlate.gameObject.SetActive(true);
         }
     }
     public void DockItems()
     {
-        cellPosition = tilemap.WorldToCell(holdPoint.position);
         Vector3 cellPos = tilemap.CellToWorld(cellPosition);
 
         // Set rotation from the tile in the Tilemap
@@ -59,26 +57,26 @@ public class FoodProcessManager : MonoBehaviour
 
 
         pg.CurrentItem.GetComponent<CircleCollider2D>().radius *= 1.5f;
+        Debug.Log(currentTile);
         ItemDocked = true;
     }
-
-    TileBase tileChecker()
+    void tileChecker()
     {
         cellPosition = tilemap.WorldToCell(holdPoint.transform.position);
         currentTile = tilemap.GetTile(cellPosition);
-        return currentTile;
     }
 
     public void StationChecker()
     {
-        currentTile = tileChecker();
+        tileChecker();
+        Debug.Log(currentTile + ": " + pg.CurrentItem.GetComponent<CraftingItems>().itemName);
         if (currentTile != null)
         {
             if (currentTile == stove && pg.CurrentItem.name == "Kawali")
             {
                 DockItems();
             }
-            if (currentTile == choppingBoard && ListChecker("ChoppingBoards"))
+            if (currentTile == choppingBoard && ListChecker("ChoppingBoard"))
             {
                 DockItems();
             }
@@ -91,7 +89,7 @@ public class FoodProcessManager : MonoBehaviour
             }
         }
     }
-    bool ListChecker(string station)
+    public bool ListChecker(string station)
     {
         if (station == "ChoppingBoard")
         {
@@ -106,6 +104,16 @@ public class FoodProcessManager : MonoBehaviour
         if (station == "Plate")
         {
             foreach (GameObject obj in craftable)
+            {
+                if (obj.GetComponent<CraftingItems>().itemName == pg.CurrentItem.GetComponent<CraftingItems>().itemName)
+                {
+                    return true;
+                }
+            }
+        }
+        if (station == "Kawali" && pg.CurrentItem != null)
+        {
+            foreach (GameObject obj in cookable)
             {
                 if (obj.GetComponent<CraftingItems>().itemName == pg.CurrentItem.GetComponent<CraftingItems>().itemName)
                 {
@@ -132,3 +140,5 @@ public class FoodProcessManager : MonoBehaviour
         }
     }
 }
+
+
