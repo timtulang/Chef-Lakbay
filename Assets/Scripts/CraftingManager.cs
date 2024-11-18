@@ -17,8 +17,6 @@ public class CraftingManager : MonoBehaviour
     public GameObject[] recipeResults;
     public Slots resultSlot;
     public Canvas canvas;
-    private float lastClickTime = 0f;
-    private float doubleClickThreshold = 0.3f; // Maximum time (seconds) between clicks for a double-click
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -41,6 +39,7 @@ public class CraftingManager : MonoBehaviour
                 }
                 nearestSlot.gameObject.SetActive(true);
                 nearestSlot.GetComponent<UnityEngine.UI.Image>().sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
+                nearestSlot.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
                 nearestSlot.item = currentItem;
 
                 itemList[nearestSlot.index] = currentItem;
@@ -91,6 +90,7 @@ public class CraftingManager : MonoBehaviour
             currentItem = item;
             customCursor.gameObject.SetActive(true);
             customCursor.sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
+            customCursor.gameObject.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
         }
     }
     public void CloseCraftingUI()

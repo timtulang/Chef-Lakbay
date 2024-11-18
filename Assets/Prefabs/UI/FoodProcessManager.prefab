@@ -71,9 +71,7 @@ MonoBehaviour:
   - {fileID: 4639372609695709408, guid: 046290a526b80c84d9a2f29b47180c52, type: 3}
   - {fileID: 5684500455295578181, guid: c79b241be185d2440811aa15ab2a101a, type: 3}
   cookable:
-  - {fileID: 77352961882532192, guid: 50a60b67f7cd8ec4990b8a006f3e9fd4, type: 3}
   - {fileID: 5801241151817698802, guid: 567b1dbc371d427409b0b5fe8fea7f70, type: 3}
-  - {fileID: 6842774226320887129, guid: b2149e8e04f1bc84bb5bffee36b9657c, type: 3}
   - {fileID: 7251286001167094771, guid: 06917c7e4b689074592324eb2ab5acaf, type: 3}
   tilemap: {fileID: 0}
   plate: {fileID: 11400000, guid: 353fcdffe524e8245b7c2155d909ba92, type: 2}
@@ -81,4 +79,8 @@ MonoBehaviour:
   stove: {fileID: 11400000, guid: e68e788dfe49d924a975dd8daf104f18, type: 2}
   canvasPlate: {fileID: 0}
   pg: {fileID: 0}
+  currentTile: {fileID: 0}
+  kawali: {fileID: 2627223850477284991, guid: 06c041e343ecd0942bd358e924f682b6, type: 3}
   holdPoint: {fileID: 0}
+  chop: 0
+  cook: 0

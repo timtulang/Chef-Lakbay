@@ -131,6 +131,7 @@ public class FoodProcessManager : MonoBehaviour
                 grandChild.gameObject.SetActive(true);
                 grandChild.gameObject.GetComponent<CraftingItems>().itemName = pg.CurrentItem.GetComponent<CraftingItems>().itemName;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = pg.CurrentItem.GetComponent<SpriteRenderer>().sprite;
+                grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
                 return;
             }
         }

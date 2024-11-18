@@ -111,9 +111,4 @@ public class PlayerGrab : MonoBehaviour
 
         currentItem = null; // Clear reference
     }
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, 0.5f); // Match OverlapCircle radius
-    }
 }

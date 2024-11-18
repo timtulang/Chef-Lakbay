@@ -6,21 +6,15 @@ using UnityEngine.Tilemaps;
 public class StoveCooking : MonoBehaviour
 {
     public float secondsCook, secondsOverCook;
-    public Transform holdPoint;
     public Tilemap tilemap;
     public TileBase currentTile, stoveTile;
     private Vector3Int cellPos;
     public GameObject kawali;
     public List<RawCookedMapping> rawCookedMappingList;
-    private string objectName;
-    private string kawaliName = "Kawali";
-    public bool isOnStove;
-    private bool stillCooking;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("Update: " + tileCheck());
             if (tileCheck())
             {
                 StartCoroutine(Cook());
@@ -39,7 +33,6 @@ public class StoveCooking : MonoBehaviour
     {
         // Wait for the cooking process
         yield return new WaitForSeconds(secondsCook);
-        Debug.Log("Cook: " + tileCheck());
         if (!tileCheck())
         {
             yield break;

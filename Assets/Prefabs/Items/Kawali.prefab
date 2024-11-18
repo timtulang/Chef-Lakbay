@@ -199,8 +199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   secondsCook: 5
-  secondsOverCook: 0
-  holdPoint: {fileID: 0}
+  secondsOverCook: 5
   tilemap: {fileID: 0}
   currentTile: {fileID: 0}
   stoveTile: {fileID: 11400000, guid: e68e788dfe49d924a975dd8daf104f18, type: 2}
@@ -208,4 +207,3 @@ MonoBehaviour:
   rawCookedMappingList:
   - {fileID: 11400000, guid: acd102794d94bb5469e1afa3a5d93cc6, type: 2}
   - {fileID: 11400000, guid: bab1d4b271fcd34429cf37638c27ca58, type: 2}
-  isOnStove: 0
