@@ -21,20 +21,19 @@ public class FoodProcessManager : MonoBehaviour
     private Canvas canvasPlate;
     [SerializeField]
     private PlayerGrab pg;
-    private TileBase currentTile;
-    private bool _itemDocked = false;
+    public TileBase currentTile;
+    public GameObject kawali;
     public Transform holdPoint;
     private Vector3Int cellPosition;
-    public bool ItemDocked
-    {
-        get { return _itemDocked; }
-        set { _itemDocked = value; }
-    }
+    public bool chop = false;
+    public bool cook = false;
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             tileChecker();
+
             EnablePlate();
         }
     }
@@ -54,13 +53,8 @@ public class FoodProcessManager : MonoBehaviour
         Matrix4x4 tileMatrix = tilemap.GetTransformMatrix(cellPosition);
         pg.CurrentItem.transform.rotation = Quaternion.LookRotation(Vector3.forward, tileMatrix.GetColumn(1));
         pg.CurrentItem.transform.position = cellPos + tilemap.tileAnchor;
-
-
-        pg.CurrentItem.GetComponent<CircleCollider2D>().radius *= 1.5f;
-        Debug.Log(currentTile);
-        ItemDocked = true;
     }
-    void tileChecker()
+    public void tileChecker()
     {
         cellPosition = tilemap.WorldToCell(holdPoint.transform.position);
         currentTile = tilemap.GetTile(cellPosition);
@@ -69,23 +63,26 @@ public class FoodProcessManager : MonoBehaviour
     public void StationChecker()
     {
         tileChecker();
-        Debug.Log(currentTile + ": " + pg.CurrentItem.GetComponent<CraftingItems>().itemName);
         if (currentTile != null)
         {
-            if (currentTile == stove && pg.CurrentItem.name == "Kawali")
+            if (currentTile == stove && pg.CurrentItem.GetComponent<ItemIdentifier>().itemName == "Kawali")
             {
                 DockItems();
+                if (pg.CurrentItem.transform.childCount > 0)
+                {
+                    cook = true;
+                }
             }
             if (currentTile == choppingBoard && ListChecker("ChoppingBoard"))
             {
                 DockItems();
+                chop = true;
             }
             if (currentTile == plate && ListChecker("Plate"))
             {
                 DockItems();
                 PopulateCraftingOptions();
                 Destroy(pg.CurrentItem);
-                ItemDocked = true;
             }
         }
     }
@@ -131,7 +128,6 @@ public class FoodProcessManager : MonoBehaviour
         {
             if (grandChild.GetComponent<CraftingItems>().itemName == "")
             {
-                Debug.Log("Grandchild name: " + grandChild.name);
                 grandChild.gameObject.SetActive(true);
                 grandChild.gameObject.GetComponent<CraftingItems>().itemName = pg.CurrentItem.GetComponent<CraftingItems>().itemName;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = pg.CurrentItem.GetComponent<SpriteRenderer>().sprite;

@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1da5c587ddd2004dacfd42647f86d71, type: 3}
+  m_Name: SayoteProcess
+  m_EditorClassIdentifier: 
+  raw: {fileID: 7709869276487292295, guid: fc84653e9298f2b4aacc2131fb17c462, type: 3}
+  processed: {fileID: 3702202542759301161, guid: d5486f3f254871b449fc7b373a061bd1, type: 3}
+  over: {fileID: 0}

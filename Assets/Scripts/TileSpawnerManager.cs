@@ -30,7 +30,6 @@ public class TileSpawnerManager : MonoBehaviour
         TileBase tile = tilemap.GetTile(cellPosition);
         if (!tilemap.HasTile(cellPosition))
         {
-            Debug.Log("No tile exists at this position!");
             return;
         }
 

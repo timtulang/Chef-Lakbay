@@ -65,15 +65,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\SpawnButtonManager.cs" />
+    <Compile Include="Assets\Scripts\RawCookedMapping.cs" />
     <Compile Include="Assets\Scripts\Slots.cs" />
     <Compile Include="Assets\Scripts\Cursor.cs" />
     <Compile Include="Assets\Scripts\CraftingItems.cs" />
     <Compile Include="Assets\Scripts\Joystick.cs" />
     <Compile Include="Assets\Scripts\joystickCtrl.cs" />
+    <Compile Include="Assets\Scripts\ItemIdentifier.cs" />
     <Compile Include="Assets\Scripts\HoldPointManager.cs" />
     <Compile Include="Assets\Scripts\FloatingJoystick.cs" />
+    <Compile Include="Assets\Scripts\ChoppingScript.cs" />
     <Compile Include="Assets\Scripts\JoystickEditor.cs" />
     <Compile Include="Assets\Scripts\TeleporterScript.cs" />
+    <Compile Include="Assets\Scripts\StoveCooking.cs" />
     <Compile Include="Assets\Scripts\TileSpawnerManager.cs" />
     <Compile Include="Assets\Scripts\DoubleClickSlots.cs" />
     <Compile Include="Assets\Scripts\ActionButtonController.cs" />

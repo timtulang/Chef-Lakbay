@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2088083806512533811}
   - component: {fileID: 2882630768246715502}
   - component: {fileID: -7477678128993592456}
+  - component: {fileID: -566962808370111117}
   m_Layer: 0
   m_Name: Sauce
   m_TagString: Untagged
@@ -95,6 +96,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2bd0d52d80bdacc4ba7033850f2790cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Sauce
+--- !u!114 &-566962808370111117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6668454819246068413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1921f584f0072409212a230dadb28b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Sauce

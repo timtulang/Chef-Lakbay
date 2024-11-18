@@ -7,6 +7,7 @@ using UnityEngine.Tilemaps;
 
 public class PlayerGrab : MonoBehaviour
 {
+    public StoveCooking stoveCookingInstance;
     public Transform holdPoint; // The position where the player holds the item
     private GameObject currentItem; // The item the player is currently holding
     public GameObject CurrentItem
@@ -54,7 +55,7 @@ public class PlayerGrab : MonoBehaviour
         LayerMask grabbableLayer = LayerMask.GetMask("Items");
 
         // Detect grabbable items within range
-        Collider2D[] items = Physics2D.OverlapCircleAll(transform.position, 0.5f, grabbableLayer);
+        Collider2D[] items = Physics2D.OverlapCircleAll(holdPoint.transform.position, 0.5f, grabbableLayer);
 
         // Check if there's a grabbable item
         foreach (Collider2D item in items)
@@ -69,10 +70,7 @@ public class PlayerGrab : MonoBehaviour
 
     public void GrabItem(GameObject item)
     {
-        Debug.Log(holdPoint.transform.position);
         currentItem = item;
-        if (manager.ItemDocked)
-            currentItem.GetComponent<CircleCollider2D>().radius /= 1.5f;
 
         // Snap the item to the hold point
         currentItem.transform.position = holdPoint.position;
@@ -91,7 +89,6 @@ public class PlayerGrab : MonoBehaviour
             rb.simulated = false;
         }
 
-        manager.ItemDocked = false;
     }
 
     public void DropItem()

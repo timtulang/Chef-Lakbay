@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4486036551037907127}
   - component: {fileID: 6183517253198882669}
   - component: {fileID: 1367508567079175053}
+  - component: {fileID: 4273064220632158516}
+  - component: {fileID: 7995521586688703439}
   m_Layer: 7
   m_Name: Kawali
   m_TagString: Item
@@ -30,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.1934414, y: -0.10013488, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.40000004, y: 0.40000004, z: 0.40000004}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -170,3 +172,40 @@ CircleCollider2D:
   m_Offset: {x: -0.15, y: 0.1}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &4273064220632158516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627223850477284991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1921f584f0072409212a230dadb28b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Kawali
+  isDocked: 0
+--- !u!114 &7995521586688703439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2627223850477284991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4a8ff3a433d5574cbeb4b36c4ff6537, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  secondsCook: 5
+  secondsOverCook: 0
+  holdPoint: {fileID: 0}
+  tilemap: {fileID: 0}
+  currentTile: {fileID: 0}
+  stoveTile: {fileID: 11400000, guid: e68e788dfe49d924a975dd8daf104f18, type: 2}
+  kawali: {fileID: 2627223850477284991}
+  rawCookedMappingList:
+  - {fileID: 11400000, guid: acd102794d94bb5469e1afa3a5d93cc6, type: 2}
+  - {fileID: 11400000, guid: bab1d4b271fcd34429cf37638c27ca58, type: 2}
+  isOnStove: 0
