@@ -15,7 +15,7 @@ public class ChoppingScript : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && pg.CurrentItem != null)
+        if (Input.GetKeyDown(KeyCode.R) && pg.CurrentItem != null)
         {
             ingredient = pg.CurrentItem;
             if (tileCheck())

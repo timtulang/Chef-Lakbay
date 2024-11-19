@@ -38,7 +38,6 @@ public class PlayerGrab : MonoBehaviour
         anim.SetBool(INTERACT_ANIMATION, true);
         if (currentItem != null)
         {
-            manager.StationChecker();
             DropItem();
         }
         else

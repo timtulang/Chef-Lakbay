@@ -17,13 +17,24 @@ public class HoldPointManager : MonoBehaviour
         // Check if HoldPoint is overlapping Kawali
         if (other.gameObject.GetComponent<ItemIdentifier>() != null)
         {
+            ItemIdentifier currentItemName;
             string itemName = other.gameObject.GetComponent<ItemIdentifier>().itemName;
-            if (itemName == "Kawali")
+            if (pg.CurrentItem != null && pg.CurrentItem.GetComponent<ItemIdentifier>() != null)
             {
-                kawali = other.gameObject;
-                if (manager.ListChecker("Kawali"))
+                currentItemName = pg.CurrentItem.gameObject.GetComponent<ItemIdentifier>();
+            }
+            else { currentItemName = null; }
+            //Debug.Log(currentItemName == null);
+            if (currentItemName == null)
+            {
+
+                if (itemName == "Kawali")
                 {
-                    isOnKawali = true; // Set flag to true when on Kawali
+                    kawali = other.gameObject;
+                    if (manager.ListChecker("Kawali") || pg.CurrentItem == null)
+                    {
+                        isOnKawali = true; // Set flag to true when on Kawali
+                    }
                 }
             }
         }
@@ -46,7 +57,6 @@ public class HoldPointManager : MonoBehaviour
 
     void PlaceRemoveItem()
     {
-        // Only proceed if Kawali is assigned and it's empty, or if there's a current item
         if (kawali != null)
         {
             if (kawali.transform.childCount == 0 && pg.CurrentItem != null)

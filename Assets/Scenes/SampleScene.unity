@@ -1535,10 +1535,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChefLakbay
       objectReference: {fileID: 0}
-    - target: {fileID: 3109569536517172906, guid: 41329127aa211f540bc3b64e2d4a58a7, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5777724252382263046, guid: 41329127aa211f540bc3b64e2d4a58a7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.55
@@ -2478,22 +2474,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1024575857925914199, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1114517918509428082, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 455523689}
-    - target: {fileID: 1396459996742902294, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537543914541932309, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1611711487396624774, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2501,10 +2485,6 @@ PrefabInstance:
     - target: {fileID: 1647000266836121938, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Name
       value: Canvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1647000266836121938, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1771620136862711285, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2514,14 +2494,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 455523689}
-    - target: {fileID: 2669240885491150472, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 2669240885491150472, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2799140579832237765, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2534,18 +2506,10 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 455523689}
-    - target: {fileID: 3121197634904739540, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4247617390402792824, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 455523689}
-    - target: {fileID: 4743201508083420211, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 4824752856019637122, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -2558,14 +2522,6 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 455523689}
-    - target: {fileID: 6490599527635921882, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6690527219442087293, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
-      propertyPath: m_Icon
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 9213734927336144533, guid: 7694b3ef357a5944e846d71f836f34ed, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

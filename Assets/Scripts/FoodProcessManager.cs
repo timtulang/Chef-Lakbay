@@ -35,6 +35,11 @@ public class FoodProcessManager : MonoBehaviour
             tileChecker();
 
             EnablePlate();
+            if (currentTile == kawali || currentTile == choppingBoard)
+            {
+                StationChecker();
+                pg.DropItem();
+            }
         }
     }
 
@@ -63,7 +68,7 @@ public class FoodProcessManager : MonoBehaviour
     public void StationChecker()
     {
         tileChecker();
-        if (currentTile != null)
+        if (currentTile != null && pg.CurrentItem != null)
         {
             if (currentTile == stove && pg.CurrentItem.GetComponent<ItemIdentifier>().itemName == "Kawali")
             {
@@ -110,9 +115,10 @@ public class FoodProcessManager : MonoBehaviour
         }
         if (station == "Kawali" && pg.CurrentItem != null)
         {
+            GameObject itemOnKawali = pg.CurrentItem;
             foreach (GameObject obj in cookable)
             {
-                if (obj.GetComponent<CraftingItems>().itemName == pg.CurrentItem.GetComponent<CraftingItems>().itemName)
+                if (obj.GetComponent<CraftingItems>().itemName == itemOnKawali.GetComponent<CraftingItems>().itemName)
                 {
                     return true;
                 }
