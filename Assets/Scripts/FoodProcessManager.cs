@@ -18,7 +18,7 @@ public class FoodProcessManager : MonoBehaviour
     [SerializeField]
     private TileBase plate, choppingBoard, stove;
     [SerializeField]
-    private Canvas canvasPlate;
+    private GameObject uiPlate;
     [SerializeField]
     private PlayerGrab pg;
     public TileBase currentTile;
@@ -36,7 +36,10 @@ public class FoodProcessManager : MonoBehaviour
     {
         tileChecker();
 
-        EnablePlate();
+        if (currentTile == plate)
+        {
+            uiPlate.SetActive(true);
+        }
 
         if (currentTile == stove || currentTile == choppingBoard)
         {
@@ -45,12 +48,10 @@ public class FoodProcessManager : MonoBehaviour
         }
     }
 
-    public void EnablePlate()
+    public void AddToPlate()
     {
-        if (currentTile == plate)
-        {
-            canvasPlate.gameObject.SetActive(true);
-        }
+        tileChecker();
+        StationChecker();
     }
     public void DockItems()
     {
@@ -70,6 +71,7 @@ public class FoodProcessManager : MonoBehaviour
     public void StationChecker()
     {
         tileChecker();
+        Debug.Log(currentTile != null && pg.CurrentItem != null);
         if (currentTile != null && pg.CurrentItem != null)
         {
             if (pg.CurrentItem.GetComponent<ItemIdentifier>() != null)
@@ -80,7 +82,6 @@ public class FoodProcessManager : MonoBehaviour
                     startCookRoutine?.Invoke();
                 }
             }
-            Debug.Log(currentTile == choppingBoard && ListChecker("ChoppingBoard"));
             if (currentTile == choppingBoard && ListChecker("ChoppingBoard"))
             {
                 DockItems();
@@ -131,7 +132,7 @@ public class FoodProcessManager : MonoBehaviour
     }
     void PopulateCraftingOptions()
     {
-        Transform options = canvasPlate.transform.Find("OptionItems");
+        Transform options = uiPlate.transform.Find("OptionItems");
 
         foreach (Transform grandChild in options)
         {

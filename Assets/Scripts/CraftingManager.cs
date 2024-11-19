@@ -5,15 +5,15 @@ using UnityEngine.EventSystems;
 
 public class CraftingManager : MonoBehaviour
 {
-    private CraftingItems currentItem;
+    public CraftingItems currentItem;
     public UnityEngine.UI.Image customCursor;
     public Slots[] craftingSlots;
     public CraftingItems[] optionsSlots;
-    public List<CraftingItems> itemList;
+    private List<CraftingItems> itemList;
     public string[] recipes;
     public GameObject[] recipeResults;
     public Slots resultSlot;
-    public Canvas canvas;
+    public GameObject uiPanel;
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -25,9 +25,7 @@ public class CraftingManager : MonoBehaviour
                 float shortestDistance = float.MaxValue;
                 foreach (Slots slot in craftingSlots)
                 {
-                    Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                    mouseWorldPosition.z = 0;
-                    float dist = Vector3.Distance(mouseWorldPosition, slot.transform.position);
+                    float dist = Vector3.Distance(Input.mousePosition, slot.transform.position);
                     if (dist < shortestDistance)
                     {
                         shortestDistance = dist;
@@ -38,6 +36,8 @@ public class CraftingManager : MonoBehaviour
                 nearestSlot.GetComponent<UnityEngine.UI.Image>().sprite = currentItem.GetComponent<UnityEngine.UI.Image>().sprite;
                 nearestSlot.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
                 nearestSlot.item = currentItem;
+
+                Debug.Log(nearestSlot);
 
                 itemList[nearestSlot.index] = currentItem;
                 CheckForCreatedRecipes();
@@ -92,6 +92,6 @@ public class CraftingManager : MonoBehaviour
     }
     public void CloseCraftingUI()
     {
-        canvas.gameObject.SetActive(false);
+        uiPanel.SetActive(false);
     }
 }

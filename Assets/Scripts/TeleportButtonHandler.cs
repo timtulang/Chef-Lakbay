@@ -8,6 +8,7 @@ public class TeleportButtonHandler : MonoBehaviour
     // Start is called before the first frame update
     public void OnTeleportButtonPress()
     {
-        pg.Teleport();
+        if (!PauseMenu.isPaused)
+            pg.Teleport();
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\StoveCooking.cs" />
     <Compile Include="Assets\Scripts\TileSpawnerManager.cs" />
     <Compile Include="Assets\Scripts\DoubleClickSlots.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ActionButtonController.cs" />
     <Compile Include="Assets\Scripts\CraftingManager.cs" />
     <Compile Include="Assets\Scripts\PlayerGrab.cs" />

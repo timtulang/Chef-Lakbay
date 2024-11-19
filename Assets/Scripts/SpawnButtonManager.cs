@@ -11,7 +11,7 @@ public class SpawnButtonManager : MonoBehaviour
 
     public void OnActionButtonPressed()
     {
-        if (map != null)
+        if (map != null && !PauseMenu.isPaused)
         {
             map.InteractWithTile();
             manager.Action();

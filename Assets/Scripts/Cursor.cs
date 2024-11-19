@@ -8,15 +8,11 @@ public class Cursor : MonoBehaviour
     private Vector3 mouseWorldPosition;
     private void Awake()
     {
-        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0;
-        transform.position = mouseWorldPosition;
+        transform.position = Input.mousePosition;
     }
     private void Update()
     {
-        mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        mouseWorldPosition.z = 0;
-        transform.position = mouseWorldPosition;
+        transform.position = Input.mousePosition;
 
     }
 }
