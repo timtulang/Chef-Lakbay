@@ -13,9 +13,18 @@ public class ChoppingScript : MonoBehaviour
     public GameObject ingredient;
     public List<RawCookedMapping> choppableMappings;
 
-    void Update()
+    void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.R) && pg.CurrentItem != null)
+        FoodProcessManager.startChopRoutine += StartChop;
+    }
+    void OnDisable()
+    {
+        FoodProcessManager.startChopRoutine -= StartChop;
+    }
+
+    void StartChop()
+    {
+        if (pg.CurrentItem != null)
         {
             ingredient = pg.CurrentItem;
             if (tileCheck())

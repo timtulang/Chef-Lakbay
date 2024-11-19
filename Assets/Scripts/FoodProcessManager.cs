@@ -28,18 +28,20 @@ public class FoodProcessManager : MonoBehaviour
     public bool chop = false;
     public bool cook = false;
 
-    void Update()
+    public delegate void stoveDocked();
+    public static stoveDocked startCookRoutine;
+    public delegate void chopDocked();
+    public static chopDocked startChopRoutine;
+    public void Action()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            tileChecker();
+        tileChecker();
 
-            EnablePlate();
-            if (currentTile == kawali || currentTile == choppingBoard)
-            {
-                StationChecker();
-                pg.DropItem();
-            }
+        EnablePlate();
+
+        if (currentTile == stove || currentTile == choppingBoard)
+        {
+            StationChecker();
+            pg.DropItem();
         }
     }
 
@@ -70,18 +72,19 @@ public class FoodProcessManager : MonoBehaviour
         tileChecker();
         if (currentTile != null && pg.CurrentItem != null)
         {
-            if (currentTile == stove && pg.CurrentItem.GetComponent<ItemIdentifier>().itemName == "Kawali")
+            if (pg.CurrentItem.GetComponent<ItemIdentifier>() != null)
             {
-                DockItems();
-                if (pg.CurrentItem.transform.childCount > 0)
+                if (currentTile == stove && pg.CurrentItem.GetComponent<ItemIdentifier>().itemName == "Kawali")
                 {
-                    cook = true;
+                    DockItems();
+                    startCookRoutine?.Invoke();
                 }
             }
+            Debug.Log(currentTile == choppingBoard && ListChecker("ChoppingBoard"));
             if (currentTile == choppingBoard && ListChecker("ChoppingBoard"))
             {
                 DockItems();
-                chop = true;
+                startChopRoutine?.Invoke();
             }
             if (currentTile == plate && ListChecker("Plate"))
             {

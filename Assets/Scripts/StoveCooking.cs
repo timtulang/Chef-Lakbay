@@ -11,16 +11,22 @@ public class StoveCooking : MonoBehaviour
     private Vector3Int cellPos;
     public GameObject kawali;
     public List<RawCookedMapping> rawCookedMappingList;
-    void Update()
+    void OnEnable()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        FoodProcessManager.startCookRoutine += StartCooking;
+    }
+    void OnDisable()
+    {
+        FoodProcessManager.startCookRoutine -= StartCooking;
+    }
+    void StartCooking()
+    {
+        if (tileCheck())
         {
-            if (tileCheck())
-            {
-                StartCoroutine(Cook());
-            }
+            StartCoroutine(Cook());
         }
     }
+
     bool tileCheck()
     {
         cellPos = tilemap.WorldToCell(kawali.transform.position);
@@ -46,8 +52,6 @@ public class StoveCooking : MonoBehaviour
                 Destroy(rawChild.gameObject);
                 GameObject cookedObject = Instantiate(mapping.processed);
                 cookedObject.SetActive(true);
-                cookedObject.GetComponent<CircleCollider2D>().isTrigger = true;
-                cookedObject.GetComponent<CircleCollider2D>().radius *= 2f;
 
                 // Set it as a child of stove
                 cookedObject.transform.SetParent(kawali.transform);
@@ -70,8 +74,6 @@ public class StoveCooking : MonoBehaviour
                 Destroy(cookedChild.gameObject);
                 GameObject cookedObject = Instantiate(mapping.over);
                 cookedObject.SetActive(true);
-                cookedObject.GetComponent<CircleCollider2D>().isTrigger = true;
-                cookedObject.GetComponent<CircleCollider2D>().radius *= 2f;
 
                 // Set it as a child of stove
                 cookedObject.transform.SetParent(kawali.transform);

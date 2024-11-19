@@ -14,7 +14,7 @@ public class SpawnButtonManager : MonoBehaviour
         if (map != null)
         {
             map.InteractWithTile();
-            manager.EnablePlate();
+            manager.Action();
         }
     }
 }

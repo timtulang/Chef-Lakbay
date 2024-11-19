@@ -48,7 +48,7 @@ public class PlayerGrab : MonoBehaviour
         anim.SetBool(INTERACT_ANIMATION, false);
     }
 
-    void TryGrabItem()
+    public void TryGrabItem()
     {
         // Define layer mask to detect grabbable items only
         LayerMask grabbableLayer = LayerMask.GetMask("Items");
@@ -97,17 +97,20 @@ public class PlayerGrab : MonoBehaviour
 
     public void DropItem()
     {
-        // Unparent the item
-        currentItem.transform.SetParent(null);
-
-        // Re-enable physics on the item
-        Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
-        if (rb != null)
+        if (currentItem != null)
         {
-            rb.isKinematic = false; // Enable physics
-            rb.simulated = true;    // Resume Rigidbody2D simulation
-        }
+            // Unparent the item
+            currentItem.transform.SetParent(null);
 
-        currentItem = null; // Clear reference
+            // Re-enable physics on the item
+            Rigidbody2D rb = currentItem.GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                rb.isKinematic = false; // Enable physics
+                rb.simulated = true;    // Resume Rigidbody2D simulation
+            }
+
+            currentItem = null; // Clear reference
+        }
     }
 }

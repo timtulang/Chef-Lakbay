@@ -79,9 +79,15 @@ public class HoldPointManager : MonoBehaviour
             }
             else
             {
-                kawali.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().isTrigger = false;
-                kawali.transform.GetChild(0).gameObject.GetComponent<CircleCollider2D>().radius *= 2f;
-                pg.GrabItem(kawali.transform.GetChild(0).gameObject);
+                if (kawali.transform.childCount > 0)
+                {
+                    Transform grabbedObject = kawali.transform.GetChild(0); // Store the reference first
+                    grabbedObject.GetComponent<CircleCollider2D>().isTrigger = false;
+                    grabbedObject.GetComponent<CircleCollider2D>().radius *= 2f;
+
+                    grabbedObject.SetParent(null); // Detach it safely
+                    pg.GrabItem(grabbedObject.gameObject); // Use the stored reference
+                }
             }
         }
     }
