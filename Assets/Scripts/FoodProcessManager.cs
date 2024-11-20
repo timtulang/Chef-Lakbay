@@ -91,7 +91,6 @@ public class FoodProcessManager : MonoBehaviour
             {
                 DockItems();
                 PopulateCraftingOptions();
-                Destroy(pg.CurrentItem);
             }
         }
     }
@@ -142,6 +141,8 @@ public class FoodProcessManager : MonoBehaviour
                 grandChild.gameObject.GetComponent<CraftingItems>().itemName = pg.CurrentItem.GetComponent<CraftingItems>().itemName;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = pg.CurrentItem.GetComponent<SpriteRenderer>().sprite;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
+                grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color32(255, 255, 255, 255);
+                Destroy(pg.CurrentItem);
                 return;
             }
         }

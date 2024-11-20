@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class Cursor : MonoBehaviour
 {
+    public Camera mainCamera;
 
-    private Vector3 mouseWorldPosition;
     private void Awake()
     {
-        transform.position = Input.mousePosition;
+        mainCamera = Camera.main;
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f;
+        transform.position = mouseWorldPosition;
     }
+
     private void Update()
     {
-        transform.position = Input.mousePosition;
-
+        // Convert mouse position from screen to world space
+        Vector3 mouseWorldPosition = mainCamera.ScreenToWorldPoint(Input.mousePosition);
+        mouseWorldPosition.z = 0f;
+        transform.position = mouseWorldPosition;
     }
 }
