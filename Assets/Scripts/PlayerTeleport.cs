@@ -7,7 +7,7 @@ public class PlayerTeleport : MonoBehaviour
 {
 
     private GameObject currentTeleporter;
-    public Button tpBtn;
+    public GameObject tpBtn;
 
 
     // Update is called once per frame
