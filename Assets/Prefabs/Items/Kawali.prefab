@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4a8ff3a433d5574cbeb4b36c4ff6537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  secondsCook: 5
-  secondsOverCook: 5
+  secondsCook: 10
+  secondsOverCook: 10
   tilemap: {fileID: 0}
   currentTile: {fileID: 0}
   stoveTile: {fileID: 11400000, guid: e68e788dfe49d924a975dd8daf104f18, type: 2}
