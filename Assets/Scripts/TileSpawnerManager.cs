@@ -11,6 +11,7 @@ public class TileSpawnerManager : MonoBehaviour
     private List<TileItemMapping> tileMappings; // List of tile-to-item mappings
     [SerializeField]
     private Transform spawnPoint; // Where the item will spawn
+    public static int currentObjects = 0;
 
 
     void Update()
@@ -33,8 +34,10 @@ public class TileSpawnerManager : MonoBehaviour
             return;
         }
 
-        if (tile != null)
+        if (tile != null && currentObjects < 20)
         {
+            currentObjects++;
+            Debug.Log(currentObjects);
             // Find the corresponding item prefab for the tile
             foreach (TileItemMapping mapping in tileMappings)
             {

@@ -135,12 +135,12 @@ public class OrderManager : MonoBehaviour
                 if (!orderBtn[i].activeSelf)
                 {
                     orders.Enqueue(order.finalDish);
-                    orderBtn[i].GetComponent<TimerBar>().InitializeTimer(70f);
+                    orderBtn[i].GetComponent<TimerBar>().InitializeTimer(120f);
                     orderBtn[i].SetActive(true);
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dish = order;
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dishName = order.finalDish.name;
                     orderBtn[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = order.finalDish.GetComponent<SpriteRenderer>().sprite;
-                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 70f));
+                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 120f));
                     break;
                 }
             }

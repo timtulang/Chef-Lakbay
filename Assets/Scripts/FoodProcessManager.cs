@@ -91,6 +91,8 @@ public class FoodProcessManager : MonoBehaviour
             {
                 DockItems();
                 PopulateCraftingOptions();
+                TileSpawnerManager.currentObjects--;
+                Debug.Log(TileSpawnerManager.currentObjects);
             }
         }
     }
