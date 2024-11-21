@@ -1,9 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
+using UnityEngine.Assertions.Must;
 using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
@@ -96,9 +95,9 @@ public class OrderManager : MonoBehaviour
                 for (int i = 0; i < orderBtn.Length; i++)
                 {
                     if (orderBtn[i].activeSelf &&
-                        orderBtn[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite == currentOrder.GetComponent<SpriteRenderer>().sprite)
+                        orderBtn[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite.name == currentOrder.GetComponent<SpriteRenderer>().sprite.name)
                     {
-                        orderBtn[i].gameObject.SetActive(false);
+                        orderBtn[i].SetActive(false);
                         orderBtn[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = null;
                         break;
                     }
@@ -136,12 +135,12 @@ public class OrderManager : MonoBehaviour
                 if (!orderBtn[i].activeSelf)
                 {
                     orders.Enqueue(order.finalDish);
-                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 40f));
-                    orderBtn[i].GetComponent<TimerBar>().InitializeTimer(40f);
+                    orderBtn[i].GetComponent<TimerBar>().InitializeTimer(70f);
                     orderBtn[i].SetActive(true);
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dish = order;
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dishName = order.finalDish.name;
                     orderBtn[i].transform.GetChild(0).GetComponent<UnityEngine.UI.Image>().sprite = order.finalDish.GetComponent<SpriteRenderer>().sprite;
+                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 70f));
                     break;
                 }
             }

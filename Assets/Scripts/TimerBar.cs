@@ -45,6 +45,5 @@ public class TimerBar : MonoBehaviour
     private void TimerFinished()
     {
         Debug.Log("Timer Finished!");
-        Destroy(gameObject); // Optional: Destroy the timer bar instance.
     }
 }

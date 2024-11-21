@@ -9,23 +9,26 @@ public class TimerText : MonoBehaviour
     [SerializeField] Text timer;
     [SerializeField] float elapsedTime;
     [SerializeField] float endTime;
+    public ScoreManager sm;
     void Start()
     {
-        elapsedTime = 0f;
-        Time.timeScale = 2f;
+        endTime = 0f;
+        elapsedTime = 600f;
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
     void Update()
     {
         elapsedTime += Time.deltaTime;
-        if (Mathf.FloorToInt(elapsedTime) == 779)
+        endTime += Time.deltaTime;
+        if (Mathf.FloorToInt(elapsedTime) == 779f)
         {
             elapsedTime = 60f;
         }
-        if (Mathf.FloorToInt(elapsedTime) == 360)
+        if (Mathf.FloorToInt(endTime) == 300f)
         {
-            Time.timeScale = 0f;
+            sm.GameOver();
         }
         int minutes = Mathf.FloorToInt(elapsedTime / 60);
         int seconds = Mathf.FloorToInt(elapsedTime % 60);

@@ -71,6 +71,7 @@ public class CraftingManager : MonoBehaviour
                 currentRecipeString += "null";
             }
         }
+        Debug.Log(currentRecipeString);
         for (int i = 0; i < recipes.Length; i++)
         {
             if (recipes[i] == currentRecipeString)

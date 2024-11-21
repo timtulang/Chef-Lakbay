@@ -32,10 +32,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ManilaScene.unity
     guid: 546a03cc8dfd0fb4184dfd4756841bc7
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/VisayasScene.unity
     guid: 60fdcff37473c0444bbfdf2a34e8520f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MindanaoScene.unity
     guid: c62904904f03f8a439474fcbb2a3a937
   - enabled: 1
