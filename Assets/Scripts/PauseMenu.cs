@@ -32,6 +32,6 @@ public class PauseMenu : MonoBehaviour
     }
     public void QuitStage()
     {
-        //TODO: Navigate to main menu
+         SceneManager.LoadScene("MainMenu");
     }
 }

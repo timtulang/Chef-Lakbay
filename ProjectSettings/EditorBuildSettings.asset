@@ -5,9 +5,51 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: 5f0e52d535dbe764589852a3d8d0a48b
+  - enabled: 1
+    path: Assets/Scenes/LoadingScreen.unity
+    guid: cdb21770d5637d84cb08170af2e6cd24
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f31766c9f7c71884187d8bb2d9cc1331
+  - enabled: 1
+    path: Assets/Scenes/StageSelectScene.unity
+    guid: 78deaea1734179841a7a20bd4ef972b5
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: c3e3df7242b2f524b8c26f167911832c
+  - enabled: 1
+    path: Assets/Scenes/SettingScene.unity
+    guid: e7622886a9619e04d9d30fbb0afa0eab
+  - enabled: 1
+    path: Assets/Scenes/SkinScene.unity
+    guid: 46eac51568e660b42b0fb3cc44febca3
+  - enabled: 1
+    path: Assets/Scenes/ManilaScene.unity
+    guid: 546a03cc8dfd0fb4184dfd4756841bc7
+  - enabled: 1
+    path: Assets/Scenes/VisayasScene.unity
+    guid: 60fdcff37473c0444bbfdf2a34e8520f
+  - enabled: 1
+    path: Assets/Scenes/MindanaoScene.unity
+    guid: c62904904f03f8a439474fcbb2a3a937
+  - enabled: 1
+    path: Assets/Scenes/ShoppingLoading.unity
+    guid: dbc66c706c76c09428bc5ce460ceb52a
+  - enabled: 1
+    path: Assets/Scenes/Stage(PLM).unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/LagunaScene.unity
+    guid: 846066ebfcefd234b85167e689017013
+  - enabled: 1
+    path: Assets/Scenes/CaviteScene.unity
+    guid: 2bb35cb7f4dc2d94db926a5880ee9d87
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3de5f3a073742064d84af961dafaa936, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: bb6d16266f9efb94e9acb51388303672, type: 2}
