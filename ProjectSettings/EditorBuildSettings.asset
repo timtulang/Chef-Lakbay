@@ -50,6 +50,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CaviteScene.unity
     guid: 2bb35cb7f4dc2d94db926a5880ee9d87
+  - enabled: 1
+    path: Assets/Scenes/LockedLevel.unity
+    guid: 9c7a3b7a30702a045b487ed3cebcea67
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 3de5f3a073742064d84af961dafaa936, type: 2}
     com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: bb6d16266f9efb94e9acb51388303672, type: 2}
