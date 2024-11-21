@@ -22,17 +22,22 @@ public class ChoppingScript : MonoBehaviour
         FoodProcessManager.startChopRoutine -= StartChop;
     }
 
+    
     void StartChop()
+{
+    if (pg.CurrentItem != null)
     {
-        if (pg.CurrentItem != null)
+        ingredient = pg.CurrentItem;
+        if (tileCheck())
         {
-            ingredient = pg.CurrentItem;
-            if (tileCheck())
-            {
-                StartCoroutine(Chop(ingredient));
-            }
+            // Play chopping sound when chopping starts
+            FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().choppingSound);
+
+            StartCoroutine(Chop(ingredient));
         }
     }
+}
+
     bool tileCheck()
     {
         cellPos = tilemap.WorldToCell(ingredient.transform.position);
