@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.UI;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class OrderManager : MonoBehaviour
 {
+    public TimerBarManager timerBar;
+    public ScoreManager scoreManager;
+    public Canvas canvas;
     public Text orderName;
     private Queue<GameObject> orders = new Queue<GameObject>();
     public GameObject order;
@@ -56,14 +60,14 @@ public class OrderManager : MonoBehaviour
             finalDishImg.sprite = null;
         }
     }
-    private int FindOrderIndex(GameObject dish)
+    public int FindOrderIndex(GameObject dish)
     {
         int index = -1; // Default to -1 (not found)
         int currentIndex = 0;
 
         foreach (GameObject order in orders)
         {
-            if (order == dish)
+            if (order.GetComponent<CraftingItems>().itemName == dish.GetComponent<CraftingItems>().itemName)
             {
                 index = currentIndex;
                 break;
@@ -83,7 +87,7 @@ public class OrderManager : MonoBehaviour
         {
             GameObject currentOrder = orders.Dequeue();
 
-            if (!removed && currentOrder == dish)
+            if (!removed && currentOrder.GetComponent<CraftingItems>().itemName == dish.GetComponent<CraftingItems>().itemName)
             {
                 // Mark as removed and handle the UI
                 removed = true;
@@ -119,6 +123,7 @@ public class OrderManager : MonoBehaviour
         if (index != -1)
         {
             RemoveOrder(dish);
+            scoreManager.score -= 100;
         }
     }
     IEnumerator generateOrders()
@@ -131,7 +136,8 @@ public class OrderManager : MonoBehaviour
                 if (!orderBtn[i].activeSelf)
                 {
                     orders.Enqueue(order.finalDish);
-                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 90f));
+                    StartCoroutine(RemoveOrderAfterDelay(order.finalDish, 40f));
+                    orderBtn[i].GetComponent<TimerBar>().InitializeTimer(40f);
                     orderBtn[i].SetActive(true);
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dish = order;
                     orderBtn[i].GetComponent<orderBtnIdentifier>().dishName = order.finalDish.name;
@@ -139,7 +145,7 @@ public class OrderManager : MonoBehaviour
                     break;
                 }
             }
-            yield return new WaitForSeconds(Mathf.FloorToInt(Random.Range(20, 35)));
+            yield return new WaitForSeconds(Mathf.FloorToInt(Random.Range(10, 15)));
         }
     }
 }

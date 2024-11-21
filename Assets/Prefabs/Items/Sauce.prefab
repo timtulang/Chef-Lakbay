@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2882630768246715502}
   - component: {fileID: -7477678128993592456}
   - component: {fileID: -566962808370111117}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sauce
-  m_TagString: Untagged
+  m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,3 +112,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemName: Sauce
+  isDocked: 0

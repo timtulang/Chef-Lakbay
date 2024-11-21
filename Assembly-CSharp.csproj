@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\CraftingItems.cs" />
     <Compile Include="Assets\GameAudio.cs" />
     <Compile Include="Assets\startaudioscript.cs" />
+    <Compile Include="Assets\Scripts\TimerBarManager.cs" />
     <Compile Include="Assets\Scripts\orderBtnIdentifier.cs" />
     <Compile Include="Assets\Scripts\Joystick.cs" />
     <Compile Include="Assets\Scene Scripts\StageSceneScript.cs" />

@@ -142,7 +142,8 @@ public class FoodProcessManager : MonoBehaviour
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().sprite = pg.CurrentItem.GetComponent<SpriteRenderer>().sprite;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().preserveAspect = true;
                 grandChild.gameObject.GetComponent<UnityEngine.UI.Image>().color = new Color32(255, 255, 255, 255);
-                Destroy(pg.CurrentItem);
+                if (pg.CurrentItem.GetComponent<CraftingItems>().itemName != "Sauce")
+                    Destroy(pg.CurrentItem);
                 return;
             }
         }

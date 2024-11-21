@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 public class SpawnButtonManager : MonoBehaviour
 {
     // Start is called before the first frame update
+    public ScoreManager sm;
     public TileSpawnerManager map;
     public FoodProcessManager manager;
     public HoldPointManager holdPointManager;
@@ -17,6 +18,7 @@ public class SpawnButtonManager : MonoBehaviour
             holdPointManager.PlaceRemoveItem();
             map.InteractWithTile();
             manager.Action();
+            sm.OnSpawnButtonPress();
         }
     }
 }

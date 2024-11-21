@@ -5,6 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class StoveCooking : MonoBehaviour
 {
+    public TimerBarManager timerBar;
     public float secondsCook, secondsOverCook;
     public Tilemap tilemap;
     public TileBase currentTile, stoveTile;

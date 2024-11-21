@@ -12,6 +12,7 @@ public class TimerText : MonoBehaviour
     void Start()
     {
         elapsedTime = 0f;
+        Time.timeScale = 2f;
     }
 
     // Update is called once per frame
