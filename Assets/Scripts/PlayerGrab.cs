@@ -49,30 +49,30 @@ public class PlayerGrab : MonoBehaviour
     }
 
     public void TryGrabItem()
-{
-    // Define layer mask to detect grabbable items only
-    LayerMask grabbableLayer = LayerMask.GetMask("Items");
-
-    // Detect grabbable items within range
-    Collider2D[] items = Physics2D.OverlapCircleAll(holdPoint.transform.position, 0.5f, grabbableLayer);
-
-    // Check if there's a grabbable item
-    foreach (Collider2D item in items)
     {
-        if (item.CompareTag("Item"))
+        // Define layer mask to detect grabbable items only
+        LayerMask grabbableLayer = LayerMask.GetMask("Items");
+
+        // Detect grabbable items within range
+        Collider2D[] items = Physics2D.OverlapCircleAll(holdPoint.transform.position, 0.5f, grabbableLayer);
+
+        // Check if there's a grabbable item
+        foreach (Collider2D item in items)
         {
-            GrabItem(item.gameObject);
-            
-            // Play pop sound when grabbing
-            FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().popSound);
-            return; // Stop after grabbing the first valid item
+            if (item.CompareTag("Item"))
+            {
+                GrabItem(item.gameObject);
+
+                // Play pop sound when grabbing
+                return; // Stop after grabbing the first valid item
+            }
         }
     }
-}
 
 
     public void GrabItem(GameObject item)
     {
+        FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().popSound);
         currentItem = item;
         if (currentItem.GetComponent<CircleCollider2D>() != null && currentItem.GetComponent<CircleCollider2D>().isTrigger == true)
         {

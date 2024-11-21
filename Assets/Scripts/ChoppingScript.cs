@@ -22,21 +22,20 @@ public class ChoppingScript : MonoBehaviour
         FoodProcessManager.startChopRoutine -= StartChop;
     }
 
-    
-    void StartChop()
-{
-    if (pg.CurrentItem != null)
-    {
-        ingredient = pg.CurrentItem;
-        if (tileCheck())
-        {
-            // Play chopping sound when chopping starts
-            FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().choppingSound);
 
-            StartCoroutine(Chop(ingredient));
+    void StartChop()
+    {
+        if (pg.CurrentItem != null)
+        {
+            ingredient = pg.CurrentItem;
+            if (tileCheck())
+            {
+                // Play chopping sound when chopping starts
+
+                StartCoroutine(Chop(ingredient));
+            }
         }
     }
-}
 
     bool tileCheck()
     {
@@ -48,10 +47,12 @@ public class ChoppingScript : MonoBehaviour
 
     IEnumerator Chop(GameObject ing)
     {
+        FindObjectOfType<AudioManager>().PlaySFX(FindObjectOfType<AudioManager>().choppingSound);
         // Wait for the cooking process
         yield return new WaitForSeconds(secondsChop);
         if (!tileCheck())
         {
+            FindObjectOfType<AudioManager>().StopSFX();
             yield break;
         }
         foreach (RawCookedMapping mapping in choppableMappings)
@@ -67,6 +68,7 @@ public class ChoppingScript : MonoBehaviour
                 cookedObject.GetComponent<CircleCollider2D>().radius *= 2f;
 
                 cookedObject.transform.localPosition = cellPos + tilemap.tileAnchor;
+                FindObjectOfType<AudioManager>().StopSFX();
                 break;
             }
         }

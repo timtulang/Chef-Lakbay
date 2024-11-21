@@ -51,20 +51,36 @@ public class AudioManager : MonoBehaviour
             bgMusicSource.Play();
         }
     }
+    public void StopBackgroundMusic(AudioClip musicClip)
+    {
+        bgMusicSource.clip = musicClip;
+        bgMusicSource.Stop();
+    }
 
     public void PlaySFX(AudioClip sfxClip)
     {
-        sfxSource.PlayOneShot(sfxClip);
+        sfxSource.clip = sfxClip;
+        sfxSource.Play();
+    }
+
+    public void StopSFX()
+    {
+        if (sfxSource.isPlaying)
+        {
+            sfxSource.Stop();
+        }
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == "MainMenu")
         {
+            StopBackgroundMusic(stageMusic);
             PlayBackgroundMusic(mainMenuMusic);
         }
-        else if (scene.name == "StagePLM")
+        else if (scene.name == "Stage(PLM)")
         {
+            StopBackgroundMusic(mainMenuMusic);
             PlayBackgroundMusic(stageMusic);
         }
     }

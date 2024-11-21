@@ -55,7 +55,7 @@ public class HoldPointManager : MonoBehaviour
         }
     }
 
-    void PlaceRemoveItem()
+    public void PlaceRemoveItem()
     {
         if (kawali != null)
         {
