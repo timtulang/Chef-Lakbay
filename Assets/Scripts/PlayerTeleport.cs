@@ -31,23 +31,12 @@ public class PlayerTeleport : MonoBehaviour
         if (collision.CompareTag("Teleporter"))
         {
             currentTeleporter = collision.gameObject;
-            tpBtn.gameObject.SetActive(true);
+            tpBtn.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         currentTeleporter = null;
-        tpBtn.gameObject.SetActive(false);
+        tpBtn.SetActive(false);
     }
-
-    // private void OnTriggerExit(Collider2D collision)
-    // {
-    //     if (collision.CompareTag("Teleporter"))
-    //     {
-    //         if (collision.gameObject == currentTeleporter)
-    //         {
-    //             currentTeleporter = null;
-    //         }
-    //     }
-    // }
 }
