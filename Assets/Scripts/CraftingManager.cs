@@ -17,8 +17,7 @@ public class CraftingManager : MonoBehaviour
     public Slots resultSlot;
     public GameObject uiPanel;
     public Camera mainCamera;
-    private float lastClickTime = 0f;
-    private float doubleClickThreshold = 0.3f;
+
     private void Update()
     {
         if (Input.GetMouseButtonUp(0))
@@ -107,16 +106,7 @@ public class CraftingManager : MonoBehaviour
     {
         uiPanel.SetActive(false);
     }
-    public void RemoveOption(CraftingItems items)
-    {
-        if (Time.time - lastClickTime <= doubleClickThreshold)
-        {
-            items.gameObject.SetActive(false);
-            items.GetComponent<UnityEngine.UI.Image>().sprite = null;
-            items.GetComponent<CraftingItems>().itemName = "";
-        }
-        lastClickTime = Time.time;
-    }
+
     public void SpawnResult()
     {
         Instantiate(dishResult, holdPoint.position, Quaternion.identity);
