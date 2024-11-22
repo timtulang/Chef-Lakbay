@@ -106,6 +106,12 @@ public class CraftingManager : MonoBehaviour
     {
         uiPanel.SetActive(false);
     }
+    public void RemoveOption(CraftingItems items)
+    {
+        items.gameObject.SetActive(false);
+        items.GetComponent<UnityEngine.UI.Image>().sprite = null;
+        items.itemName = "";
+    }
 
     public void SpawnResult()
     {
